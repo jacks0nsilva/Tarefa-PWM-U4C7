@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = 'build/Tarefa-PWM-U4C7.uf2'
+elf = 'build/Tarefa-PWM-U4C7.elf'
