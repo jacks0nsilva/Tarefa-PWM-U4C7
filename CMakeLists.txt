@@ -41,7 +41,7 @@ pico_set_program_name(Tarefa-PWM-U4C7 "Tarefa-PWM-U4C7")
 pico_set_program_version(Tarefa-PWM-U4C7 "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(Tarefa-PWM-U4C7 0)
+pico_enable_stdio_uart(Tarefa-PWM-U4C7 1)
 pico_enable_stdio_usb(Tarefa-PWM-U4C7 0)
 
 # Add the standard library to the build
