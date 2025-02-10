@@ -6,6 +6,7 @@
 #define SERVO_PIN 22 // Pino do servomotor conectado à GPIO como PWM
 #define PWM_FREQ 50  // 50Hz -> período de 20ms
 #define CLOCK_DIV 64.0f // Divisor do clock para o PWM
+#define LED_BLUE 12 // Pino do LED azul
 
 // Função para configurar o módulo PWM
 void pwm_setup(uint slice) {
@@ -14,6 +15,11 @@ void pwm_setup(uint slice) {
     uint32_t wrap = (clock_freq / CLOCK_DIV) / PWM_FREQ - 1;
     pwm_set_wrap(slice, wrap);
     pwm_set_enabled(slice, true); // Habilita o PWM
+
+    printf("Frequência do Clock do Sistema: %u Hz\n", clock_freq);
+    printf("Divisor de Clock PWM: %f\n", CLOCK_DIV);
+    printf("Frequência PWM Calculada: %f Hz\n", (float)clock_freq / CLOCK_DIV / (wrap + 1));
+    printf("Valor de Wrap PWM: %u\n", wrap);
 }
 
 // Função para definir posição do servo
