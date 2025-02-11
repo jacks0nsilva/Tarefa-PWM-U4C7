@@ -11,7 +11,7 @@
 // Função para configurar o módulo PWM
 void pwm_setup(uint slice) {
     pwm_set_clkdiv(slice, CLOCK_DIV); // Define o divisor de clock do PWM
-    uint32_t clock_freq = clock_get_hz(clk_sys); // Frquência padrão de 125MHz
+    uint32_t clock_freq = clock_get_hz(clk_sys); // Frequência padrão de 125MHz
     uint32_t wrap = (clock_freq / CLOCK_DIV) / PWM_FREQ - 1; // WRAP = 39061
     pwm_set_wrap(slice, wrap);
     pwm_set_enabled(slice, true); // Habilita o PWM

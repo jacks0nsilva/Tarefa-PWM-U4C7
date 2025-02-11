@@ -6,7 +6,7 @@ Esta tarefa demonstra o controle de um servomotor utilizando PWM (Pulse Width Mo
 
 ## Vídeo de apresentação 🎥
 
-[Vídeo de apresentação do projeto](link_do_video)
+[Vídeo de apresentação do projeto](https://drive.google.com/file/d/12z9fMKa606yJVRDcl7UhtjvZ44AAIqe5/view?usp=drive_link)
 
 ## Funcionalidades 📌
 
@@ -18,11 +18,11 @@ Esta tarefa demonstra o controle de um servomotor utilizando PWM (Pulse Width Mo
   - 0°: pulso de 500µs.
 - Movimento contínuo suave, aumentando e diminuindo gradualmente o pulso aplicado ao servomotor.
 
-## Arquivos Principais
+## Arquivos Principais 📂
 
 - Tarefa-PWM-U4C7.c: Contém a implementação em C que configura o PWM, define as posições do servomotor e executa os movimentos.
 
-## Requisitos
+## Requisitos 📋
 
 - Hardware:
   - Raspberry Pi Pico
@@ -32,7 +32,7 @@ Esta tarefa demonstra o controle de um servomotor utilizando PWM (Pulse Width Mo
   - Pico SDK instalado e configurado
   - Ferramentas de compilação (CMake, Make, etc)
 
-## Funcionamento do Código
+## Funcionamento do Código 📝
 
 1. **Inicialização e Configuração**
    - A função `stdio_init_all()` inicializa os recursos de I/O padrão.
@@ -48,17 +48,17 @@ Esta tarefa demonstra o controle de um servomotor utilizando PWM (Pulse Width Mo
    - O programa inicialmente move o servomotor para posições fixas de 180°, 90° e 0°, com intervalos de 5 segundos.
    - Em seguida, entra em um loop infinito onde o servomotor oscila suavemente entre 0° e 180° (e vice-versa) aumentando e diminuindo gradualmente o pulso aplicado.
 
-## Experimento com o LED
+## Experimento com o LED Azul 🟦
 
 - Conforme solicitado, foi realizado um exprimento com o LED azul (GPIO 12) utilizando o código dessa tarefa. Foi constatado que o LED diminui bastante a sua luminosidade ao logo dos primeiros 15 segundos mas não se apaga completamente, logo mais ele entra em um ciclo de aumentar e diminuir a luminosidade suavemente.
 
-## Compilação e Execução
+## Compilação e Execução 🚀
 
 _Obs: É necessário ter a exntesão do Wokwi instalado no VsCode_
 
 1.  **Clone o repositório**
     ```
-    git clone https://github.com/jacks0nsilva/Tarefa-UART-I2C
+    git clone https://github.com/jacks0nsilva/Tarefa-PWM-U4C7
     ```
 2.  **Instale a extensão do Raspberry Pi Pico no seu VsCode**
 3.  **Usando a extensão do Raspberry Pi Pico, siga os passos:**
@@ -66,4 +66,4 @@ _Obs: É necessário ter a exntesão do Wokwi instalado no VsCode_
 
 5.  **Compile Project: Compilação dos binários**
 
-6.  **Abra o arquivo diagram.json para iniciar o simulador**
+6.  **Abra o arquivo diagram.json para iniciar o simulador Wokwi**
