@@ -11,8 +11,8 @@
 // Função para configurar o módulo PWM
 void pwm_setup(uint slice) {
     pwm_set_clkdiv(slice, CLOCK_DIV); // Define o divisor de clock do PWM
-    uint32_t clock_freq = clock_get_hz(clk_sys);
-    uint32_t wrap = (clock_freq / CLOCK_DIV) / PWM_FREQ - 1;
+    uint32_t clock_freq = clock_get_hz(clk_sys); // Frquência padrão de 125MHz
+    uint32_t wrap = (clock_freq / CLOCK_DIV) / PWM_FREQ - 1; // WRAP = 39061
     pwm_set_wrap(slice, wrap);
     pwm_set_enabled(slice, true); // Habilita o PWM
 
@@ -24,9 +24,16 @@ void pwm_setup(uint slice) {
 
 // Função para definir posição do servo
 void set_servo_position(uint slice, uint16_t pulse_width_us) {
+    // Obtém a frequência do clock do sistema (125 MHz por padrão)
     uint32_t clock_freq = clock_get_hz(clk_sys);
+    // Calcula o valor máximo do contador PWM (wrap), baseado na frequência desejada (50 Hz)
     uint32_t wrap = (clock_freq / CLOCK_DIV) / PWM_FREQ - 1;
+
+    // Converte o tempo de pulso (em microssegundos) para o valor do nível PWM
+    // Multiplica pelo número total de contagens do PWM (wrap + 1) e divide pelo período total (20ms)
     uint32_t level = (pulse_width_us * (wrap + 1)) / 20000;
+
+    // Define o nível do PWM ao tempo de pulso desejado
     pwm_set_gpio_level(SERVO_PIN, level);
 }
 
